@@ -1,13 +1,17 @@
-mod people;
+mod board;
 
 use bevy::prelude::*;
-use people::PeoplePlugin;
+use crate::board::Board;
 
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_plugins(PeoplePlugin)
+        .add_plugins(board::BoardPlugin)
+        .add_systems(Startup, setup_camera)
         .run();
 }
 
+fn setup_camera(mut commands: Commands) {
+    commands.spawn(Camera2d);
+}
 
