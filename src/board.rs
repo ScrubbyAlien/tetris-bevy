@@ -17,6 +17,16 @@ pub struct Board {
     transform: Transform,
 }
 
+impl Board {
+    pub fn top_y_position(&self) -> f32 {
+        self.transform.translation.y + (self.height * self.cell_size) as f32
+    }
+
+    pub fn bottom_y_position(&self) -> f32 {
+        self.transform.translation.y
+    }
+}
+
 fn setup_board(mut commands: Commands, asset_server: Res<AssetServer>) {
     const BOARD_W: i32 = 9;
     const BOARD_H: i32 = 20;

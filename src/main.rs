@@ -1,7 +1,7 @@
 mod board;
+mod tetromino;
 
 use bevy::prelude::*;
-use crate::board::Board;
 
 fn main() {
     App::new()
